@@ -9,12 +9,6 @@ pygame.init()
 # ---- LIST OF VARIABLES ----
 # Colors
 my_colors = MyColors()
-"""WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 225, 0)
-BLUE = (0, 0, 225)
-YELLOW = (255, 255, 0)"""
 
 # Random vars
 size = (700, 500)
