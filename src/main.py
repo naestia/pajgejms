@@ -29,7 +29,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # Random vars
-size = (1200, 700)
+size = (255, 255)
 screen = pygame.display.set_mode(size)
 font = pygame.font.SysFont("Calibri", 25, True, False)
 clock = pygame.time.Clock()
@@ -37,7 +37,10 @@ x_speed = 0
 y_speed = 0
 x_coord = 10
 y_coord = 10
-
+width = 20
+height = 20
+margin = 5
+count = 0
 
 # ---- Naming the game ----
 pygame.display.set_caption("Collarbone")
@@ -50,28 +53,12 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a:
-                x_speed = -3
-            elif event.key == pygame.K_d:
-                x_speed = 3
-            elif event.key == pygame.K_w:
-                y_speed = -3
-            elif event.key == pygame.K_s:
-                y_speed = 3
-        elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_a or event.key == pygame.K_d:
-                x_speed = 0
-            elif event.key == pygame.K_w or event.key == pygame.K_s:
-                y_speed = 0
 
-    x_coord += x_speed
-    y_coord += y_speed
-
-    screen.fill(WHITE)
+    screen.fill(BLACK)
     # ---- Draw here ----
-
-    screen.blit(player_image, [x_coord, y_coord])
+    for column in range(10):
+        pygame.draw.rect(screen, WHITE, [count, 0, width, height])
+        count += 20
     # draw_stick_figure(screen, x_coord, y_coord)
 
     # ---- Draw here ----
